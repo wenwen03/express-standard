@@ -2,12 +2,12 @@ import http from 'http';
 import express from 'express';
 import path from 'path';
 import cookieParser from 'cookie-parser';
-import indexRouter from './routes/index';
-import serverErrorHandlers from './middlewares/serverErrorHandler';
-import notFoundHandler from './middlewares/notFoundHandler';
-import serverListener from './middlewares/serverListener';
-import accessLogger from './middlewares/accessLogger';
-import appErrorHandler from './middlewares/appErrorHandler';
+import indexRouter from '@/routes/index';
+import serverErrorHandlers from '@/middlewares/serverErrorHandler';
+import notFoundHandler from '@/middlewares/notFoundHandler';
+import serverListener from '@/middlewares/serverListener';
+import accessLogger from '@/middlewares/accessLogger';
+import appErrorHandler from '@/middlewares/appErrorHandler';
 
 const app = express();
 const server = http.createServer(app);
