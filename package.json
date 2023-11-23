@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon --exec ts-node src/app.ts"
+    "dev": "nodemon --exec ts-node src/app.ts",
+    "lint": "eslint src --cache --ext .js,.ts,",
+    "lint:fix": "eslint src --cache --ext .js,.ts, --fix"
   },
   "dependencies": {
     "cookie-parser": "~1.4.6",
