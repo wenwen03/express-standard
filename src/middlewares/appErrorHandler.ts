@@ -1,7 +1,7 @@
-import type { Request, Response, NextFunction } from 'express';
 import path from 'path';
-import * as rfs from 'rotating-file-stream';
+import type { Request, Response, NextFunction } from 'express';
 import moment from 'moment-timezone';
+import * as rfs from 'rotating-file-stream';
 
 const logDirectory = path.join(__dirname, '../../logs/error');
 const timestamp = moment().format('YYYY-MM-DD HH:mm:ss');
@@ -10,7 +10,7 @@ const logStream = rfs.createStream('error.log', {
   interval: '1d',
   path: logDirectory,
   compress: 'gzip',
-  rotate: 30
+  rotate: 30,
 });
 
 export default function appErrorHandler(err: any, req: Request, res: Response, next: NextFunction) {
@@ -26,4 +26,3 @@ export default function appErrorHandler(err: any, req: Request, res: Response, n
     message: err.message,
   });
 }
-
